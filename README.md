@@ -17,10 +17,10 @@ A full-stack web application that connects job seekers with employers, built wit
 - [Installation](#-installation)
 - [Configuration](#-configuration)
 - [Usage](#-usage)
+- [Screenshots](#-screenshots)
 - [Database Schema](#-database-schema)
 - [API Endpoints](#-api-endpoints)
 - [User Roles](#-user-roles)
-- [Screenshots](#-screenshots)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -233,6 +233,26 @@ Maximum upload size: Configurable in Flask settings (default: 16MB)
 2. **Dashboard**: View system statistics and recent activity
 3. **Manage System**: Monitor total jobs, candidates, companies, and applications
 4. **Review Activity**: Check recent job postings and applications
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Homepage - "Find Your Dream Job"
+Browse available job opportunities with advanced search and filters.
+![Homepage](https://imgur.com/placeholder1.png)
+
+### 👤 Candidate Registration
+Create a candidate account with education, skills, and resume upload.
+![Candidate Registration](https://imgur.com/placeholder2.png)
+
+### 🏢 Company Registration
+Register your company to start posting job openings.
+![Company Registration](https://imgur.com/placeholder3.png)
+
+### 🔐 Login Page
+Secure login for all user types (Candidate, Company, Admin).
+![Login](https://imgur.com/placeholder4.png)
 
 ---
 
