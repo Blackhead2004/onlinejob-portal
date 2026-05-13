@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h2>🏢 Company Dashboard</h2>
+    </div>
+</div>
+
+<!-- Stats -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card text-center text-white bg-primary">
+            <div class="card-body">
+                <h1>{{ jobs|length }}</h1>
+                <p class="mb-0">Active Jobs</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center text-white bg-success">
+            <div class="card-body">
+                <h1>{{ total_applicants }}</h1>
+                <p class="mb-0">Total Applicants</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <a href="{{ url_for('post_job') }}" class="btn btn-primary btn-lg w-100 h-100 d-flex align-items-center justify-content-center">
+            ➕ Post New Job
+        </a>
+    </div>
+</div>
+
+<!-- Jobs Table -->
+<div class="card">
+    <div class="card-header">
+        <h5>My Job Listings</h5>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Posted</th>
+                        <th>Deadline</th>
+                        <th>Applicants</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                    <tr>
+                        <td>{{ job.title }}</td>
+                        <td>{{ job.posted_date.strftime('%d/%m') }}</td>
+                        <td>{{ job.deadline }}</td>
+                        <td><span class="badge bg-primary">{{ job.applicants }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

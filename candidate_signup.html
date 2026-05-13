@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="col-md-8 offset-md-2">
+  <h3 class="text-center mb-4">Candidate Registration</h3>
+
+  <form method="POST" enctype="multipart/form-data">
+    <!-- Personal Information -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="first_name" class="form-label">First Name</label>
+        <input type="text" name="first_name" id="first_name" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label for="last_name" class="form-label">Last Name</label>
+        <input type="text" name="last_name" id="last_name" class="form-control" required>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" name="email" id="email" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" name="password" id="password" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="gender" class="form-label">Gender</label>
+      <select name="gender" id="gender" class="form-select" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="location" class="form-label">Current Location</label>
+      <input type="text" name="location" id="location" class="form-control" placeholder="City, State">
+    </div>
+
+    <div class="mb-3">
+      <label for="skills" class="form-label">Skills</label>
+      <input type="text" name="skills" id="skills" class="form-control" placeholder="Python, MongoDB, HTML, CSS">
+    </div>
+
+    <!-- Education Section -->
+    <h5 class="mt-4">Educational Details</h5>
+    <div class="row">
+      <div class="col-md-3">
+        <label for="xth" class="form-label">10th (%)</label>
+        <input type="text" name="xth" id="xth" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <label for="xiith" class="form-label">12th (%)</label>
+        <input type="text" name="xiith" id="xiith" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <label for="ug" class="form-label">UG (%)</label>
+        <input type="text" name="ug" id="ug" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <label for="pg" class="form-label">PG (%)</label>
+        <input type="text" name="pg" id="pg" class="form-control">
+      </div>
+    </div>
+
+    <!-- Professional Section -->
+    <h5 class="mt-4">Professional Info</h5>
+
+    <div class="mb-3">
+      <label for="experience" class="form-label">Experience</label>
+      <input type="text" name="experience" id="experience" class="form-control" placeholder="Fresher / 2 Years">
+    </div>
+
+    <div class="mb-3">
+      <label for="projects" class="form-label">Academic / Personal Projects</label>
+      <textarea name="projects" id="projects" rows="3" class="form-control" placeholder="Describe your projects briefly"></textarea>
+    </div>
+
+    <!-- Resume Upload -->
+    <div class="mb-4">
+      <label for="resume" class="form-label">Upload Resume (PDF / DOCX)</label>
+      <input type="file" name="resume" id="resume" class="form-control" accept=".pdf,.doc,.docx" required>
+    </div>
+
+    <button class="btn btn-primary w-100" type="submit">Register</button>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+  <h3 class="mb-3 text-center">Login</h3>
+  <form method="POST">
+    <div class="mb-3">
+      <label>Email</label>
+      <input type="email" class="form-control" name="email" required>
+    </div>
+    <div class="mb-3">
+      <label>Password</label>
+      <input type="password" class="form-control" name="password" required>
+    </div>
+    <button class="btn btn-success w-100">Login</button>
+  </form>
+  <hr>
+  <p class="text-center">
+    <a href="/candidate_signup">Candidate Sign Up</a> |
+    <a href="/company_signup">Company Sign Up</a>
+  </p>
+</div>
+{% endblock %}

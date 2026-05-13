@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center mb-4">Company Registration</h3>
+
+  <form method="POST">
+    <!-- Company Name -->
+    <div class="mb-3">
+      <label for="company_name" class="form-label">Company Name</label>
+      <input type="text" name="company_name" id="company_name" class="form-control" required placeholder="e.g. Zoho Corporation">
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Company Email</label>
+      <input type="email" name="email" id="email" class="form-control" required placeholder="hr@company.com">
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" name="password" id="password" class="form-control" required minlength="4" placeholder="Enter a secure password">
+    </div>
+
+    <!-- Address -->
+    <div class="mb-3">
+      <label for="address" class="form-label">Office Address</label>
+      <textarea name="address" id="address" rows="2" class="form-control" required placeholder="Company address"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Register Company</button>
+  </form>
+
+  <p class="text-center mt-3">
+    Already have an account?
+    <a href="{{ url_for('login') }}">Login here</a>
+  </p>
+</div>
+
+{% endblock %}

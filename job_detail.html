@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row mb-4">
+  <!-- Left: description -->
+  <div class="col-md-8">
+    <h2>{{ job.title }}</h2>
+    <p class="text-muted">
+      {{ job.company_email }} | {{ job.location }} | {{ job.job_type }}
+    </p>
+
+    <hr>
+
+    <h5>Job Description</h5>
+    <p>{{ job.description }}</p>
+
+    <h5 class="mt-4">Responsibilities</h5>
+    <ul>
+      <li>Write effective, scalable code.</li>
+      <li>Develop back-end components and improve performance.</li>
+      <li>Integrate user-facing elements with applications.</li>
+      <li>Test, debug and maintain existing software.</li>
+      <li>Collaborate with internal teams to define requirements.</li>
+    </ul>
+
+    <h5 class="mt-4">Requirements and skills</h5>
+    <ul>
+      <li>Experience as a Python developer.</li>
+      <li>Knowledge of Flask/Django and ORM.</li>
+      <li>Familiarity with HTML, CSS, JavaScript.</li>
+      <li>Problem-solving attitude and teamwork.</li>
+    </ul>
+
+    <div class="mt-4">
+      <a href="{{ url_for('apply', job_id=job._id) }}" class="btn btn-danger">
+        Apply Now
+      </a>
+      {% if not session.get('user') %}
+      <p class="mt-2 text-muted">You will be asked to login before applying.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Right: summary -->
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header">
+        Job Summary
+      </div>
+      <div class="card-body">
+        <p><strong>Published on:</strong>
+          {{ job.posted_date.strftime("%d %b %Y") if job.posted_date else "" }}</p>
+        <p><strong>Vacancy:</strong> {{ job.vacancy }}</p>
+        <p><strong>Experience:</strong> {{ job.experience }}</p>
+        <p><strong>Job Location:</strong> {{ job.location }}</p>
+        <p><strong>Salary:</strong> {{ job.salary }}</p>
+        <p><strong>Gender:</strong> {{ job.gender }}</p>
+        <p><strong>Application Deadline:</strong> {{ job.deadline }}</p>
+        <p><strong>Applicants:</strong> {{ applicant_count }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

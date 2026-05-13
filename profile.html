@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="text-center mb-4">Profile Details</h3>
+{% if session.role == 'candidate' %}
+<div class="card col-md-6 offset-md-3 p-3">
+  <h4>{{ user.first_name }} {{ user.last_name }}</h4>
+  <p><b>Email:</b> {{ user.email }}</p>
+  <p><b>Location:</b> {{ user.location }}</p>
+  <p><b>Skills:</b> {{ user.skills }}</p>
+  <p><b>Experience:</b> {{ user.experience }}</p>
+  <p><b>Projects:</b> {{ user.projects }}</p>
+</div>
+{% else %}
+<div class="card col-md-6 offset-md-3 p-3">
+  <h4>{{ user.company_name }}</h4>
+  <p><b>Email:</b> {{ user.email }}</p>
+  <p><b>Address:</b> {{ user.address }}</p>
+</div>
+{% endif %}
+{% endblock %}
