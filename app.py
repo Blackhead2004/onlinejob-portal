@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, send_file, jsonify
 from flask_bcrypt import Bcrypt
-from pymongo import MongoClient
+from config import db, fs
 from bson.objectid import ObjectId
 from datetime import datetime
 import gridfs
@@ -11,10 +11,7 @@ app = Flask(__name__)
 app.secret_key = "supersecretkey1234567890abcdef"
 bcrypt = Bcrypt(app)
 
-# MongoDB Connection
-client = MongoClient("mongodb://localhost:27017/")
-db = client["job_portal_db"]
-fs = gridfs.GridFS(db)
+# MongoDB Connection is now imported from config.py
 
 UPLOAD_FOLDER = os.path.join(os.getcwd(), "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
